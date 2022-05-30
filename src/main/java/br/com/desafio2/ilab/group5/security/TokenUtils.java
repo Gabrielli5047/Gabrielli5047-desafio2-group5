@@ -27,16 +27,16 @@ public class TokenUtils {
 
 	private static final String HEADER = "Authorization";
 	private static final String PREFIX = "Bearer ";
-	private static final long EXPIRATION = DIAS * 1; // 15 minutos
+	private static final long EXPIRATION = DIAS * 1; 
 	private static final String SECRET_KEY = "$3cr37k3y3q03D3s4f103n7r3g4d0r3S";
 	private static final String EMISSOR = "FoodLovers";
 
-	public static String createToken(Administrador administrador) {
+	public static String createToken(Administrator administrador) {
 
 		Key secretKey = Keys.hmacShaKeyFor(SECRET_KEY.getBytes());
 
 		String token = Jwts.builder()
-				.setSubject(administrador.getNome()+',' + administrador.getId() +','+ administrador.getEmail())
+				.setSubject(administrador.getName()+',' + administrador.getId() +','+ administrador.getEmail())
 				.setIssuer(EMISSOR)
 				.setExpiration(new Date(System.currentTimeMillis() + EXPIRATION))
 				.signWith(secretKey, SignatureAlgorithm.HS256)

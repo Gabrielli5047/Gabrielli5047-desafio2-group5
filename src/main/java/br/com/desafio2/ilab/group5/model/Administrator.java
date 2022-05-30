@@ -5,38 +5,36 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
-@Table(name = "administradores")
-public class Administrador {
+@Table(name = "administrators")
+public class Administrator {
 
     @Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id", nullable = false)
 	private Integer id;
 
-	@Column(name = "nome", nullable = false, length = 50)
-	private String nome;
+	@Column(name = "name", nullable = false, length = 50)
+	private String name;
 
 	@Column(name = "email", nullable = false, length = 50, unique = true)
 	private String email;
 
-	@Column(name = "senha", nullable = false, columnDefinition = "TEXT")
-	private String senha;
+	@Column(name = "password", nullable = false, columnDefinition = "TEXT")
+	private String password;
 
-    public Administrador() {
+    public Administrator() {
 		super();
 	}
 
-	public Administrador(Integer id, String nome, String email, String senha) {
+	public Administrator(Integer id, String name, String email, String password) {
 		super();
 		this.id = id;
-		this.nome = nome;
+		this.name = name;
 		this.email = email;
-		this.senha = senha;
+		this.password = password;
 	}
 
     public Integer getId() {
@@ -47,12 +45,12 @@ public class Administrador {
 		this.id = id;
 	}
 
-	public String getNome() {
-		return nome;
+	public String getName() {
+		return name;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public String getEmail() {
@@ -63,12 +61,12 @@ public class Administrador {
 		this.email = email;
 	}
 
-	public String getSenha() {
-		return senha;
+	public String getPassword() {
+		return password;
 	}
 
-	public void setSenha(String senha) {
-		this.senha = senha;
+	public void setPassword(String password) {
+		this.password = password;
 	}
     
 }

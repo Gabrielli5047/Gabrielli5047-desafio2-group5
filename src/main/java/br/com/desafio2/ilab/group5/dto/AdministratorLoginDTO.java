@@ -1,19 +1,19 @@
 package br.com.desafio2.ilab.group5.dto;
 
-public class AdministradorLoginDTO {
+public class AdministratorLoginDTO {
 
 	private String email;
 	private String telefone;
 	private String senha;
 
-    public AdministradorLoginDTO(String email, String telefone, String senha) {
+    public AdministratorLoginDTO(String email, String telefone, String senha) {
 		super();
 		this.email = email;
 		this.telefone = telefone;
 		this.senha = senha;
 	}
 
-	public AdministradorLoginDTO() {
+	public AdministratorLoginDTO() {
 		super();
 		// TODO Auto-generated constructor stub
 	}

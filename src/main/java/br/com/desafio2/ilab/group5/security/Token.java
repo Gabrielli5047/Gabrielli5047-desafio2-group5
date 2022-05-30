@@ -19,4 +19,9 @@ public class Token {
 	public void setToken(String token) {
 		this.token = token;
 	}
+
+	public String toString(){
+		String[] tokenFormater = token.split(" ");
+		return tokenFormater[1];
+	}
 }

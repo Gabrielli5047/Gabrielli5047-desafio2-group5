@@ -23,11 +23,10 @@ public class LoginController {
 
 	@PostMapping("/login")
 	public ResponseEntity<?> realizarLogin(@RequestBody AdministradorLoginDTO dadosLogin) throws InterruptedException, ExecutionException {
-		Token token = service.gerarTokenEntregador(dadosLogin);
+		Token token = service.gerarTokenAdministrador(dadosLogin);
 
 		if (token != null) {
 			KafkaService.sendMessage("Token", token.toString());
-			System.err.println("OIIIIIII");
 			return ResponseEntity.ok(token);
 		}
 		KafkaService.sendMessage("Token", "Token invalido");

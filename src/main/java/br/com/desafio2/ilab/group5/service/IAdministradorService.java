@@ -5,6 +5,6 @@ import br.com.desafio2.ilab.group5.security.Token;
 
 public interface IAdministradorService {
     
-    public Token gerarTokenEntregador(AdministradorLoginDTO dadosLogin);
+    public Token gerarTokenAdministrador(AdministradorLoginDTO dadosLogin);
 
 }

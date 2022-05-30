@@ -19,7 +19,7 @@ public class AdministradorService implements IAdministradorService{
     private AdministradorDAO dao;
     
     @Override
-	public Token gerarTokenEntregador(AdministradorLoginDTO dadosLogin) {
+	public Token gerarTokenAdministrador(AdministradorLoginDTO dadosLogin) {
 		try {
 			Administrador user = dao.findByEmail(dadosLogin.getEmail());
 			if (user != null) {
